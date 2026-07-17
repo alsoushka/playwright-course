@@ -3,7 +3,7 @@ from playwright.sync_api import Page, expect
 import pytest
 
 @pytest.mark.parametrize(
-    "first, last,email",
+    "first, last, email",
     [
         ("John", "Smith", "johnsmith@gmail.com"),
         ("Jane", "Doe", "janedoe@gmail.com"),
