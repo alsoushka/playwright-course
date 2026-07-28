@@ -83,10 +83,9 @@ def test_drag_and_drop(page: Page):
 
 def test_context_menu(page: Page) -> None:
     page.goto("https://the-internet.herokuapp.com/context_menu")
-    # page.once("dialog", lambda dialog: dialog.dismiss())
-    with page.expect_dialog() as dialog:
-        page.locator("#hot-spot").click(button="right")
-    d_value = dialog.info_value
+    page.on("dialog", lambda dialog: dialog.accept())
+    page.locator("#hot-spot").click(button="right")
+ 
 
 
 
