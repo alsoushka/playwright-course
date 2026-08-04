@@ -111,6 +111,7 @@ def test_hidden_ad(page: Page) -> None:
     page.goto("https://the-internet.herokuapp.com/entry_ad")
     modal = page.locator("#modal")
     # Wait for the modal to load
+    modal.wait_for(state="visible")
     assert modal.is_visible()
 
     page.get_by_text("Close", exact=True).click()
